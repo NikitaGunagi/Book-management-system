@@ -9,6 +9,10 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT;
 
+app.get('/', (req, res) => {
+    res.json({ message: 'Book Management System API', status: 'Running' });
+});
+
 app.use('/api/books',bookRouter);
 
 connectDb().then(() => {
